@@ -4,16 +4,19 @@ import AuthRow from './components/utils/AuthRow'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
+import { GlobalProvider } from './context/GlobalState'
 
 function App() {
   const { playerInfo } = useSelector(state => state.auth)
   return (
     <>
-      <ToastContainer />
-      <Navbar />
+      <GlobalProvider>
+        <ToastContainer />
+        <Navbar />
 
-      {playerInfo ? <AuthRow /> : <span></span>}
-      <Outlet />
+        {playerInfo ? <AuthRow /> : <span></span>}
+        <Outlet />
+      </GlobalProvider>
     </>
   )
 }

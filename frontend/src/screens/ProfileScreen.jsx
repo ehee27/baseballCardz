@@ -14,7 +14,6 @@ const ProfileScreen = () => {
   const [openBio, setOpenBio] = useState(true)
   const [openProfPic, setOpenProfPic] = useState(false)
   const { playerInfo } = useSelector(state => state.auth)
-  console.log('This is player info', playerInfo)
 
   // we'll map this to render player specs
   const playerSpecs = ['Age', 'Height', 'Weight', 'Bats', 'Throws', 'HS']

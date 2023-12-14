@@ -1,8 +1,25 @@
+import { useContext } from 'react'
+import { GlobalContext } from '../../../context/GlobalState'
+
 const BattingAverage = () => {
+  const { games } = useContext(GlobalContext)
+  console.log('This is the games', games)
+
+  // AT BATS
+  const atBats = games.reduce((acc, curr) => {
+    return acc + curr.atBats
+  }, 0)
+  // HITS
+  const hits = games.reduce((acc, curr) => {
+    return acc + curr.hits
+  }, 0)
+  // DIVIDE AND FORMAT
+  const currentAverage = (hits / atBats).toFixed(3).slice(2)
+
   return (
-    <div className="border-2 p-2">
+    <div className="border-2 p-1">
       <p>Batting Average:</p>
-      <span>000</span>
+      <span>{currentAverage}</span>
     </div>
   )
 }
