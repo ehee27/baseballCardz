@@ -1,0 +1,39 @@
+1. Data Layer
+
+- server.js (test)
+- .env
+- routes (standard register, auth, logout)
+- controllers mirror routes (test)
+- models setup
+- MONGO setup and config (test connect object)
+
+2. Token and Cookie
+
+- utils folder and generateToken() func
+- generateToken() function called in controllers
+- additional model methods 'pre' to hash password & 'matchPassword'
+  \*\*\* test test and re-test
+
+3. Front End
+
+- create vite@latest project
+- import react-router-dom and optional icons
+- clean up folders, set 3 screens and a Navbar component
+- main.js, setup Route tree, import Outlet on App
+
+4. Navbar creation
+
+- contained within it's own folder, Navbar, Menu & css
+- create responsive menu and test
+
+5. Forms pages
+
+- build out controlled forms (value,onChange) and a 'handleSubmit'
+
+6. Profile page
+
+7 .Redux - register, auth, update, logout
+
+8. Protected routes
+
+9. Images
