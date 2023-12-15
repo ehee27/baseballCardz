@@ -5,7 +5,7 @@ import GameLog from './GameLog'
 // import SLG from './SLG'
 // import OPS from './OPS'
 //------------------------
-import { GlobalContext } from '../../../context/GlobalState'
+import { GamesContext } from '../../../context/GamesState'
 //------------------------
 
 const StatsForm = () => {
@@ -17,7 +17,7 @@ const StatsForm = () => {
   // const [homeruns, setHomeruns] = useState(0)
   // const [walks, setWalks] = useState(0)
   //
-  const { addGameStats } = useContext(GlobalContext)
+  const { addGameStats } = useContext(GamesContext)
 
   const stats = [
     { id: 1, label: 'At Bats', value: atBats, function: setAtBats },
@@ -36,7 +36,8 @@ const StatsForm = () => {
       atBats: atBats,
       hits: hits,
     }
-    console.log('These are game stats', gameStats)
+    setAtBats(0)
+    setHits(0)
     addGameStats(gameStats)
   }
 
@@ -58,7 +59,7 @@ const StatsForm = () => {
               <div key={i} className="flex flex-col">
                 <label>{item.label}</label>
                 <input
-                  className="border-2 p-1 rounded-md"
+                  className="border-2 p-1 rounded-md text-black"
                   type="number"
                   value={item.value}
                   onChange={e => item.function(parseInt(e.target.value))}

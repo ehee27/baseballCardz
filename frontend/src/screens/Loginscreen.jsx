@@ -59,14 +59,14 @@ const Login = () => {
               onSubmit={handleSubmit}
             >
               <input
-                className="border-2 rounded mb-3 p-2 text-sm"
+                className="border-2 rounded mb-3 p-2 text-sm text-black"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 type="email"
                 placeholder="Email"
               />
               <input
-                className="border-2 rounded mb-3 p-2 text-sm"
+                className="border-2 rounded mb-3 p-2 text-sm text-black"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password"

@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import { GlobalContext } from '../../../context/GlobalState'
+import { GamesContext } from '../../../context/GamesState'
 
 const GameLog = () => {
-  const { games } = useContext(GlobalContext)
+  const { games } = useContext(GamesContext)
   // console.log('Destructured games from context', games)
   return (
     <div className="border-2 p-2">
-      {games.map((item, i) => {
+      {/* {games.map((item, i) => {
         return (
           <div className="flex gap-2 border-2 border-primary p-1" key={i}>
             <p>Game {i}| </p>
@@ -15,7 +15,7 @@ const GameLog = () => {
             </span>
           </div>
         )
-      })}
+      })} */}
     </div>
   )
 }

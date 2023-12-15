@@ -110,8 +110,8 @@ const authPlayer = asyncHandler(async (req, res) => {
       bats: player.bats,
       throws: player.throws,
       hs: player.hs,
-      AVG: req.player.AVG,
-      OBP: req.player.OBP,
+      AVG: player.AVG,
+      OBP: player.OBP,
       SLG: player.SLG,
       OPS: player.OPS,
       roles: player.roles,
@@ -147,8 +147,8 @@ const getPlayerProfile = asyncHandler(async (req, res) => {
     profilePic: req.player.profilePic,
     AVG: req.player.AVG,
     OBP: req.player.OBP,
-    SLG: player.SLG,
-    OPS: player.OPS,
+    SLG: req.player.SLG,
+    OPS: req.player.OPS,
     roles: req.player.roles,
   }
   // send player data json
