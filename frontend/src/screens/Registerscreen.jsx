@@ -76,7 +76,7 @@ const Register = () => {
                 type="password"
                 placeholder="Password"
               />
-              <button className="transition ease-in-out delay-100 bg-green-900 hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-500">
+              <button className="transition ease-in-out delay-100 bg-accent hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-500">
                 REGISTER
               </button>
               <p className="mt-4 text-md">

@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 import { GamesContextProvider } from './context/GamesState'
+import Footer from './components/footer/Footer'
 
 function App() {
   const { playerInfo } = useSelector(state => state.auth)
@@ -12,10 +13,11 @@ function App() {
     <>
       <GamesContextProvider>
         <ToastContainer />
-        <Navbar />
+        <Navbar playerInfo={playerInfo} />
 
-        {playerInfo ? <AuthRow /> : <span></span>}
+        {/* {playerInfo ? <AuthRow /> : <span></span>} */}
         <Outlet />
+        <Footer />
       </GamesContextProvider>
     </>
   )

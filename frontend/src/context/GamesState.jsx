@@ -1,36 +1,40 @@
-// 1.INITIALIZE Context 2.INITIALIZE Provider 3.wrap CHILDREN to PROVIDE value
+// On mount, useEffect will start the process:
+// 1. SET 'games' in localStorage (gets value from getInitialState)
+// 2. LISTENS for additional 'games' updates. Spreads any new games into the array
 
-// This component needs to...
-// 1. Render current state/initialState
-// 2. Add games to state via form and save in localStorage
-
-// On mount we'll have useEffect SET local storage with 'games' state. THEN always be listening (dependency array) to reset the games when updated.
-
-// Anytime game added, SPREAD the 'previous' games with new game, SAVE to LS
-// -----------------------------------------------------------------------------
+// useEffect sets both games and stats from playerInfo
 
 import { createContext, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const initialState = {
   games: [],
 }
 
-// sets games from LS or initialState
+// checks LS, if 'games' set that, if NOT set intialState
 const getInitialState = () => {
   const games = localStorage.getItem('games')
   return games ? JSON.parse(games) : initialState
 }
 
-// CONTEXT OBJECT ----------------------------------
+// CONTEXT OBJECT
 export const GamesContext = createContext()
 // PROVIDER
 export const GamesContextProvider = ({ children }) => {
-  const [games, setGames] = useState(getInitialState)
+  // PLAYER DATA
+  const { playerInfo } = useSelector(state => state.auth)
 
-  // useEffect inside the Provider so anytime provider is invoked it triggers
+  // LOCAL STATE variables
+  const [games, setGames] = useState(getInitialState)
+  const [stats, setStats] = useState([])
+
+  // SET THE DATA ------------------------------------------
   useEffect(() => {
+    {
+      playerInfo?.stats ? setStats(playerInfo.stats) : ''
+    }
     localStorage.setItem('games', JSON.stringify(games))
-    console.log('This is the games state', games)
+    console.log('This is the games', games)
   }, [games])
 
   // ADD ACTION
@@ -42,7 +46,7 @@ export const GamesContextProvider = ({ children }) => {
   }
 
   return (
-    <GamesContext.Provider value={{ addGameStats, games }}>
+    <GamesContext.Provider value={{ addGameStats, games, stats }}>
       {children}
     </GamesContext.Provider>
   )

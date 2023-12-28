@@ -1,39 +1,9 @@
-1. Data Layer
+// STATS GAMES and CONTEXT
+// CONTEXT 1. Initialize Context Object, 2. Initialize Provider, 3. WRAP Children w Provider and value
 
-- server.js (test)
-- .env
-- routes (standard register, auth, logout)
-- controllers mirror routes (test)
-- models setup
-- MONGO setup and config (test connect object)
+Our Context Component 'GamesState' does 2 main things:
 
-2. Token and Cookie
+1. Tracks inputted game stats so we can calculate stats
+2. Pulls stored stats from DB so we can render in 'Stats' component
 
-- utils folder and generateToken() func
-- generateToken() function called in controllers
-- additional model methods 'pre' to hash password & 'matchPassword'
-  \*\*\* test test and re-test
-
-3. Front End
-
-- create vite@latest project
-- import react-router-dom and optional icons
-- clean up folders, set 3 screens and a Navbar component
-- main.js, setup Route tree, import Outlet on App
-
-4. Navbar creation
-
-- contained within it's own folder, Navbar, Menu & css
-- create responsive menu and test
-
-5. Forms pages
-
-- build out controlled forms (value,onChange) and a 'handleSubmit'
-
-6. Profile page
-
-7 .Redux - register, auth, update, logout
-
-8. Protected routes
-
-9. Images
+\*\*\* how can we keep these two going when LS is cleared? It's fine when a player is starting out but they need to come back and have all their games played, it can't start at an empty array.

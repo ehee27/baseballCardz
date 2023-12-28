@@ -21,10 +21,6 @@ const UpdateForm = () => {
   const [bats, setBats] = useState('')
   const [throws, setThrows] = useState('')
   const [highSchool, setHighSchool] = useState('')
-  const [AVG, setAVG] = useState('')
-  const [OBP, setOBP] = useState('')
-  const [SLG, setSLG] = useState('')
-  const [OPS, setOPS] = useState('')
   const [bio, setBio] = useState('')
 
   // INITIALIZE AUTH FROM STATE ---------------------------------------
@@ -57,10 +53,6 @@ const UpdateForm = () => {
         weight,
         bats,
         throws,
-        AVG,
-        OBP,
-        SLG,
-        OPS,
         hs: highSchool,
       }).unwrap()
       dispatch(setCredentials({ ...res, password: playerInfo.password }))
@@ -146,34 +138,6 @@ const UpdateForm = () => {
             onChange={e => setHighSchool(e.target.value)}
             type="text"
             placeholder="High School"
-          />
-          <input
-            className="border-2 rounded mb-3 p-2 text-sm"
-            value={AVG}
-            onChange={e => setAVG(e.target.value)}
-            type="text"
-            placeholder="AVG"
-          />
-          <input
-            className="border-2 rounded mb-3 p-2 text-sm"
-            value={OBP}
-            onChange={e => setOBP(e.target.value)}
-            type="text"
-            placeholder="OBP"
-          />
-          <input
-            className="border-2 rounded mb-3 p-2 text-sm"
-            value={SLG}
-            onChange={e => setSLG(e.target.value)}
-            type="text"
-            placeholder="SLG"
-          />
-          <input
-            className="border-2 rounded mb-3 p-2 text-sm"
-            value={OPS}
-            onChange={e => setOPS(e.target.value)}
-            type="text"
-            placeholder="OPS"
           />
           <textarea
             className="border-2 rounded mb-3 p-2 text-sm"

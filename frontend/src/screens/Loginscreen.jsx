@@ -27,7 +27,6 @@ const Login = () => {
       navigate('/profile')
     }
   }, [playerInfo, navigate])
-  console.log('This is the player info', playerInfo)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -51,7 +50,7 @@ const Login = () => {
       ) : (
         <div className="flex flex-col justify-center items-center border-2 m-3 pt-10 pb-10">
           <div>
-            <h1 className="text-3xl mb-3">Sign In</h1>
+            <h1 className="text-black text-3xl mb-3">Sign In</h1>
             {isLoading && <h1>Loading asshole...</h1>}
 
             <form
@@ -72,7 +71,7 @@ const Login = () => {
                 type="password"
                 placeholder="Password"
               />
-              <button className="transition ease-in-out delay-100 bg-green-900 hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-500">
+              <button className="transition ease-in-out delay-100 bg-accent hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-500">
                 SIGN IN
               </button>
               <p className="mt-4 text-md">

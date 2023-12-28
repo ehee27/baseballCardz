@@ -61,35 +61,13 @@ const playerSchema = mongoose.Schema(
       required: false,
       default: '',
     },
-    AVG: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    OBP: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    SLG: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    OPS: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    roles: [
-      {
-        type: String,
-        default: 'Player',
-      },
-    ],
     active: {
       type: Boolean,
       default: true,
+    },
+    stats: {
+      type: Array,
+      default: [],
     },
   },
   {
