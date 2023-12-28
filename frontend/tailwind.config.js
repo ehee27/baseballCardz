@@ -6,6 +6,8 @@ export default {
     extend: {},
     fontFamily: {
       sans: ['ui-sans-serif', 'Squada One'],
+      serif: ['Orbitron'],
+      serif2: ['Oswald'],
     },
   },
   plugins: [daisy],

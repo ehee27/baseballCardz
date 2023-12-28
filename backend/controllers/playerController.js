@@ -27,10 +27,7 @@ const registerPlayer = asyncHandler(async (req, res) => {
     hs: '',
     bio: '',
     profilePic: '',
-    AVG: '',
-    OBP: '',
-    SLG: '',
-    OPS: '',
+    stats: [],
   })
   // if player call generateToken
   if (player) {
@@ -42,6 +39,7 @@ const registerPlayer = asyncHandler(async (req, res) => {
       email: player.email,
       bio: player.bio,
       profilePic: profilePic,
+      stats: [],
     })
   } else {
     res.status(400)
@@ -66,11 +64,7 @@ const authPlayer = asyncHandler(async (req, res) => {
     bats,
     throws,
     hs,
-    AVG,
-    OBP,
-    SLG,
-    OPS,
-    roles,
+    stats,
   } = req.body
   // find an existing record
   const player = await Player.findOne({ email })
@@ -90,11 +84,7 @@ const authPlayer = asyncHandler(async (req, res) => {
     player.bats = bats || player.bats
     player.throws = throws || player.throws
     player.hs = hs || player.hs
-    player.AVG = AVG || player.AVG
-    player.OBP = OBP || player.OBP
-    player.SLG = SLG || player.SLG
-    player.OPS = OPS || player.OPS
-    player.roles = roles || player.roles
+    player.stats = stats || player.stats
     //
     res.status(201).json({
       _id: player._id,
@@ -110,11 +100,7 @@ const authPlayer = asyncHandler(async (req, res) => {
       bats: player.bats,
       throws: player.throws,
       hs: player.hs,
-      AVG: req.player.AVG,
-      OBP: req.player.OBP,
-      SLG: player.SLG,
-      OPS: player.OPS,
-      roles: player.roles,
+      stats: player.stats,
     })
     res.status(201).json({ message: 'Player still authorized here' })
   } else {
@@ -145,11 +131,7 @@ const getPlayerProfile = asyncHandler(async (req, res) => {
     position: req.player.position,
     bio: req.player.bio,
     profilePic: req.player.profilePic,
-    AVG: req.player.AVG,
-    OBP: req.player.OBP,
-    SLG: player.SLG,
-    OPS: player.OPS,
-    roles: req.player.roles,
+    stats: req.player.stats,
   }
   // send player data json
   res.status(200).json(player)
@@ -168,12 +150,9 @@ const updatePlayerProfile = asyncHandler(async (req, res) => {
     bats,
     throws,
     hs,
-    AVG,
-    OBP,
-    SLG,
-    OPS,
     bio,
     profilePic,
+    stats,
   } = req.body
   // find player by ID
 
@@ -193,10 +172,7 @@ const updatePlayerProfile = asyncHandler(async (req, res) => {
     player.hs = hs || player.hs
     player.bio = bio || player.bio
     player.profilePic = profilePic || player.profilePic
-    player.AVG = AVG || player.AVG
-    player.OBP = OBP || player.OBP
-    player.SLG = SLG || player.SLG
-    player.OPS = OPS || player.OPS
+    player.stats = stats || player.stats
 
     // save the update
     const updatedPlayer = await player.save()
@@ -216,10 +192,7 @@ const updatePlayerProfile = asyncHandler(async (req, res) => {
       hs: updatedPlayer.hs,
       bio: updatedPlayer.bio,
       profilePic: updatedPlayer.profilePic,
-      AVG: updatedPlayer.AVG,
-      OBP: updatedPlayer.OBP,
-      SLG: updatedPlayer.SLG,
-      OPS: updatedPlayer.OPS,
+      stats: updatedPlayer.stats,
     })
   } else {
     res.status(404)

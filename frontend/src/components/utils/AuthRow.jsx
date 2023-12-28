@@ -6,8 +6,8 @@ import { logout } from '../../features/auth/authSlice'
 
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FaUserLarge } from 'react-icons/fa6'
+import { HiOutlineLogout } from 'react-icons/hi'
 
 const AuthRow = () => {
   const dispatch = useDispatch()
@@ -26,32 +26,21 @@ const AuthRow = () => {
   }
 
   return (
-    <div className="flex justify-end pt-2 pr-3 gap-2">
+    <div className="flex justify-end py-2 pr-3 gap-2">
       <button
-        className="transition ease-in-out delay-50 bg-green-700 hover:scale-105 text-xs text-white p-2 rounded w-200 hover:bg-green-500"
+        className="btn btn-sm btn-accent text-white transition ease-in-out delay-25 hover:scale-105 shadow-md shadow-gray-400"
         onClick={handleLogout}
       >
-        Logout
+        <HiOutlineLogout />
+        LOGOUT
       </button>
       <Link to="/profile">
-        <button className="transition ease-in-out delay-50 bg-green-700 hover:scale-105 text-xs text-white p-2 rounded w-200 hover:bg-green-500">
-          My Account
+        <button className="btn btn-sm border-2 bg-green-800 border-none text-white transition ease-in-out delay-25 hover:bg-green-500 hover:scale-105 shadow-md shadow-gray-400">
+          <FaUserLarge />
+          MY PROFILE
         </button>
       </Link>
     </div>
   )
 }
-
 export default AuthRow
-
-{
-  /* <div className="flex justify-end items-center p-1 transition ease-in-out gap-2 hover:text-green-500 cursor-pointer ">
-      <FontAwesomeIcon icon={faRightFromBracket} onClick={handleLogout} />
-      <Link to="/profile">
-        <FontAwesomeIcon
-          icon={faUser}
-          className="mt-2 ml-3 mr-5 transition ease-in-out delay-50 hover:scale-125"
-        />
-      </Link>
-    </div> */
-}
