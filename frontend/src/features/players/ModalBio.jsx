@@ -28,7 +28,6 @@ const ModalBio = ({ openBio, setOpenBio, onClose }) => {
           </div>
           {/* footer content div */}
           <div className="flex justify-center gap-4"></div>
-          FOOTER
         </div>
       </div>
     </div>

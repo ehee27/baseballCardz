@@ -21,10 +21,9 @@ router.post('/auth', authPlayer)
 
 router.post('/logout', logoutPlayer)
 
-router
-  .route('/profile')
-  .get(protect, getPlayerProfile)
-  .put(protect, updatePlayerProfile)
+router.route('/profile').get(getPlayerProfile).put(updatePlayerProfile)
+// .get(protect, getPlayerProfile)
+// .put(protect, updatePlayerProfile)
 
 //------ UPLOADING FILE ------------------
 // At first we tried implementing this on the controller (might need to do that eventually) but for now we left all logic here

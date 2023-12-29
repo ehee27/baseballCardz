@@ -56,7 +56,7 @@ const UpdateForm = () => {
         hs: highSchool,
       }).unwrap()
       dispatch(setCredentials({ ...res, password: playerInfo.password }))
-      // window.location.reload()
+      window.location.reload()
       navigate('/profile')
       toast.success('Profile updated')
     } catch (error) {
@@ -147,7 +147,7 @@ const UpdateForm = () => {
             placeholder="Player Bio"
           />
 
-          <button className="transition ease-in-out delay-100 bg-green-900 hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-500">
+          <button className="btn btn-accent transition ease-in-out delay-100 hover:scale-105 text-white p-2 rounded w-200 hover:bg-green-700">
             UPDATE
           </button>
         </form>

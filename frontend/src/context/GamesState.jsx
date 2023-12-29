@@ -34,7 +34,7 @@ export const GamesContextProvider = ({ children }) => {
       playerInfo?.stats ? setStats(playerInfo.stats) : ''
     }
     localStorage.setItem('games', JSON.stringify(games))
-    console.log('This is the games', games)
+    // console.log('This is the games', games)
   }, [games])
 
   // ADD ACTION

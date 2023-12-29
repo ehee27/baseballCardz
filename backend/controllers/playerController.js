@@ -6,6 +6,7 @@ import generateToken from '../utils/generateToken.js'
 const registerPlayer = asyncHandler(async (req, res) => {
   // destructure from the request
   const { name, email, profilePic, password } = req.body
+
   // find an existing record
   const existingPlayer = await Player.findOne({ email })
   //
@@ -29,6 +30,7 @@ const registerPlayer = asyncHandler(async (req, res) => {
     profilePic: '',
     stats: [],
   })
+
   // if player call generateToken
   if (player) {
     generateToken(res, player._id)
@@ -140,6 +142,7 @@ const getPlayerProfile = asyncHandler(async (req, res) => {
 //------- UPDATE ------------------------------------------
 const updatePlayerProfile = asyncHandler(async (req, res) => {
   const {
+    _id,
     name,
     email,
     position,
@@ -156,7 +159,7 @@ const updatePlayerProfile = asyncHandler(async (req, res) => {
   } = req.body
   // find player by ID
 
-  const player = await Player.findById(req.player._id)
+  const player = await Player.findById(_id)
 
   // set player (in realtime) to req data
   if (player) {

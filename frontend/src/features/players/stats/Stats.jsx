@@ -45,7 +45,7 @@ const Stats = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="bg-black rounded-md pb-10">
+        <div className="bg-gray-300 rounded-md p-2">
           <div className="grid grid-cols-1 md:grid-cols-4 p-5 rounded-md gap-4 bg-gradient-to-b from-gray-600 to-black">
             {/* MAP components array ---------------------- */}
             {components.map((item, i) => {
@@ -60,11 +60,11 @@ const Stats = () => {
             })}
           </div>
           {/* SAVE THE UPLOADED STATS TO DB ----------------- */}
-          <div className="">
-            <div className="px-5">
+          <div className="flex">
+            <div className="">
               <button
                 onClick={() => setOpenStatsForm(!openStatsForm)}
-                className="btn btn-accent text-white w-[200px] my-2"
+                className="btn btn-sm btn-accent text-white w-[200px] my-2 shadow-md shadow-gray-500"
               >
                 UPLOAD STATS
               </button>{' '}
@@ -77,7 +77,7 @@ const Stats = () => {
             <div className="px-5">
               <button
                 onClick={handleSaveStats}
-                className="btn btn-sm btn-primary text-white w-[200px] my-2"
+                className="btn btn-sm btn-accent text-white w-[200px] my-2 shadow-md shadow-gray-500"
               >
                 SAVE STATS
               </button>

@@ -25,7 +25,7 @@ const OBP = () => {
 
   return (
     <div className="flex flex-col justify-center items-center text-xl p-2 text-gray-300">
-      <span>OBP</span>
+      <span className="text-gray-400">OBP</span>
       <span className="text-6xl text-primary">{currentOBP}</span>
     </div>
   )

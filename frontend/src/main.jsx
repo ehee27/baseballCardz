@@ -18,7 +18,7 @@ import { Provider } from 'react-redux'
 import PrivateRoute from './components/utils/PrivateRoute.jsx'
 import Players from './screens/PLayers.jsx'
 import Coaches from './screens/Coaches.jsx'
-import StatsTracker from './components/STButton.jsx'
+import StatsTracker from './screens/StatsTracker.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

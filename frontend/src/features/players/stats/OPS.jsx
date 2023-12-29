@@ -41,7 +41,7 @@ const OPS = () => {
 
   return (
     <div className="flex flex-col justify-center items-center text-xl p-2 text-gray-300">
-      <span>OPS</span>
+      <span className="text-gray-400">OPS</span>
       <span className="text-6xl text-primary">{currentOPS}</span>
     </div>
   )
