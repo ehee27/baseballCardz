@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { apiSlice } from './features/slices/apiSlice'
 import authReducer from './features/auth/authSlice'
-import { playersApi } from './features/players/playerSlice'
+// import { playersApi } from './features/players/playerSlice'
 
 const store = configureStore({
   reducer: {
     // the authReducer key and value
     auth: authReducer,
-    players: playersApi.reducer,
+    // players: playersApi.reducer,
     // the apiSlice key and value
     [apiSlice.reducerPath]: apiSlice.reducer,
   },

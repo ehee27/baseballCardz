@@ -1,5 +1,6 @@
 import { MdOutlineMobileFriendly } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import statTraker from '../assets/statTracker.jpeg'
 
 const StatsTracker = () => {
   return (
@@ -21,6 +22,12 @@ const StatsTracker = () => {
           </Link>
         </button>
       </div>
+      {/* <div className="flex justify-center items-center">
+        <img
+          className="h-[600px] w-[250px] mt-20 shadow-md shadow-gray-500"
+          src={statTraker}
+        ></img>
+      </div> */}
     </div>
   )
 }

@@ -15,7 +15,6 @@ function App() {
         <ToastContainer />
         <Navbar playerInfo={playerInfo} />
 
-        {/* {playerInfo ? <AuthRow /> : <span></span>} */}
         <Outlet />
         <Footer />
       </GamesContextProvider>
