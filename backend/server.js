@@ -1,8 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
-import playerRoutes from './routes/playersRoutes.js'
-import coachRoutes from './routes/coachRoutes.js'
+import userRoutes from './routes/userRoutes.js'
+import messageRoutes from './routes/messagesRoutes.js'
+import authRoutes from './routes/authRoutes.js'
 import connectDB from './dbConfig/db.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
@@ -18,8 +19,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
-app.use('/api/players', playerRoutes)
-app.use('/api/coaches', coachRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/users', userRoutes)
+app.use('/api/messages', messageRoutes)
 
 app.get('/', (req, res) => {
   res.send('SERVER READY TO ROLL')
